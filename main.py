@@ -54,7 +54,7 @@ class MainScreen(Screen):
         self.manager.current = 'tasks'
 
     def display_calendar(self, instance):
-        self.manager.current = 'calender'
+        self.manager.current = 'calendar'
 
 # displays events if anything exists for the day selected
 class TasksScreen(Screen):
@@ -210,7 +210,7 @@ class AddTaskScreen(Screen):
         self.manager.current = 'tasks'
 
 # displays events if anything exists for the day
-class Calender(Screen):
+class Calendar(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.month_number = datetime.strptime(json_file_name, "%B").month
@@ -343,7 +343,7 @@ class MyApp(App):
         sm.add_widget(MainScreen(name='main'))
         sm.add_widget(TasksScreen(name='tasks'))
         sm.add_widget(AddTaskScreen(name='addTask'))
-        sm.add_widget(Calender(name='calender'))
+        sm.add_widget(Calendar(name='calendar'))
         return sm
 
 
